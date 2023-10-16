@@ -47,7 +47,7 @@ def draw_zone_map(ax, sf, shp_dic, heat={}, text=[], arrows=[]):
         cm=plt.get_cmap('Reds')
         sm = plt.cm.ScalarMappable(cmap=cm, norm=norm)
         sm.set_array([])
-        plt.colorbar(sm, ticks=np.linspace(min(heat.values()),max(heat.values()),8),
+        plt.colorbar(sm, ax = ax, ticks=np.linspace(min(heat.values()),max(heat.values()),8),
                      boundaries=np.arange(min(heat.values())-10,max(heat.values())+10,.1))
     
     for sr in sf.shapeRecords():
